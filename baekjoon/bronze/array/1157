@@ -1,0 +1,8 @@
+# 1157 단어 공부
+
+s,a=input().lower(),[] # 입력받은 문자열 소문자로 변환
+for i in range(97,123):
+ a.append(s.count(chr(i))) # 소문자들 카운트
+ 
+ # 가장 많이 카운트 된게 두개 이상이면 "?" 아니면 가장 많이 카운트 된거 인덱스 후 문자 처리해서 출력
+print('?'if a.count(max(a))>1 else chr(a.index(max(a))+97).upper())
