@@ -1,0 +1,11 @@
+import sys
+n = int(sys.stdin.readline().rstrip())
+result = n
+for i in range(n):
+    a = sys.stdin.readline().rstrip()
+    # 현재 알파벳이 다음 알파벳과 다르고 현재 알파벳이 다다음 문자열 내에 포함된다면
+    for j in range(len(a)-2):
+        if a[j] != a[j+1] and a[j] in a[j+2:]:
+            result-=1
+            break
+print(result)
