@@ -1,3 +1,4 @@
+# 그룹 단어 체커
 import sys
 n = int(sys.stdin.readline().rstrip())
 result = n
