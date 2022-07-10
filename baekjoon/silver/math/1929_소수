@@ -1,0 +1,11 @@
+# 소수
+import sys, math
+n, m = map(int, sys.stdin.readline().rstrip().split())
+if n == 1:n=2 # 1은 소수 합성수가 아니기 때문에 2로 변환
+for i in range(n, m+1):
+    a=1
+    if (i > 2 and i % 2 == 0):continue # 4부터의 짝수는 소수가 아니여서 넘기기
+    
+    for j in range(2, int(math.sqrt(i))+1): # 현재 구하고자 하는 값의 제곱근 까지만 구하면 소수 인정
+        if i % j == 0:a=0;break
+    if a==1:print(i)
