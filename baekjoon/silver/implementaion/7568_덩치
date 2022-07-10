@@ -1,0 +1,12 @@
+i = int(input())
+a = []
+
+for _ in range(i): # 튜플로 입력 받기
+    a.append(tuple(map(int, input().split()))
+    
+for i in a:
+    r = 1
+    for j in a: # 현재 위치보다 더 높은 값이 있다면 rank +1해서 순위 조정
+        if i[0] < j[0] and i[1] < j[1]:
+                r += 1
+    print(r, end = " ")
