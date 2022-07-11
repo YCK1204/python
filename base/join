@@ -1,0 +1,7 @@
+# join 함수로 리스트 내 값을 연결 할 수 있음
+
+a = ['a', 'b', 'c', 'd', '1', '2', '3']
+ 
+# 리스트를 문자열로 join
+result1 = "".join(a)
+print(result1)
