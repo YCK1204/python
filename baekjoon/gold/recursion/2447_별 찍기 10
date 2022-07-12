@@ -1,0 +1,20 @@
+# 별 찍기 - 10
+import sys
+sys.setrecursionlimit(10**6) # 파이썬의 재귀 최대 깊이 1000을 - > 10**6으로 설정
+
+def s(i):
+    if i == 1:
+        return ["*"]
+    
+    a = s(i//3)
+    arr = []
+
+    for idx in a:                          # 1, 2, 3층으로 분할해서 append
+        arr.append(idx*3)
+    for idx in a:
+        arr.append(idx + " "*(i//3) + idx)
+    for idx in a:
+        arr.append(idx*3)
+    return arr
+n = int(sys.stdin.readline().rstrip())
+print('\n'.join(s(n))) # 조인함수를 사용해 하나의 벽처럼 보이게 출력
