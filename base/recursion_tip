@@ -1,0 +1,6 @@
+# 파이썬의 기본 재귀 깊이 제한은 1000으로 매우 얕은 편이다
+# sys.setrecursionlimit(10**6)을 작성해주면 재귀의 최대 깊이가 10**6으로 바뀌게 됩니다.
+# PyPy에서는 sys.setrecursionlimit()으로 임의로 재귀의 최대 깊이를 설정할 수 없다
+
+import sys
+sys.setrecursionlimit(10 ** 6)
