@@ -1,0 +1,14 @@
+import sys
+def cutting(standard):
+    result = 0
+    for i in range(n):
+        if tteoks[i] - standard > 0:
+          result += tteoks[i] - standard # 떡을 기준점으로 뺏을 때 양수면 result + 
+    if result >= h: 기준점만큼 뺀 값들의 합이 원하는 값보다 같거나 클 때 종료
+      return standard
+    else:
+      return cutting(standard - 1)
+        
+n, h = map(int, sys.stdin.readline().rstrip().split())
+tteoks = list(map(int, sys.stdin.readline().rstrip().split()))
+print(cutting(max(tteoks)))
