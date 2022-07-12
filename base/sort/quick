@@ -1,0 +1,28 @@
+# 퀵 정렬
+import random
+
+array = [i for i in range(10)]
+random.shuffle(array)
+
+def quick_sort(array, start, end):
+    if start >= end:
+        return
+    pivot = start # 첫 번째 값을 pivot 설정
+    left = start + 1
+    right = end
+    
+    while left <= right:
+        while left <= end and array[left] <= array[pivot]: # left가 끝값이 되지않고 left값이 피벗보다 작다면 피벗보다 큰 값을 만날때 까지 left1씩 추가
+            left += 1    
+        while right > start and array[right] >= array[pivot]: # right가 0이 되지않고 right값이 피벗보다 크다면 작은 값을 만날때 까지 right1씩 빼기
+            right -= 1
+        
+        if left > right: # 서로 엇갈린 상태일 때
+            array[right], array[pivot] = array[pivot], array[right]
+        else:       # 엇갈리지 않았을 때 큰 값과 작은 값 교환
+            array[left], array[right] = array[right], array[left]
+  
+    quick_sort(array, start, right - 1) # 왼쪽(피벗보다 작은 값들) 정렬
+    quick_sort(array, right + 1, end) # 오른쪽(피벗보다 큰 값들) 정렬
+quick_sort(array, 0, len(array) - 1)
+print(array)
