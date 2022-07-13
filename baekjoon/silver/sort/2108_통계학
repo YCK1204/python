@@ -1,0 +1,30 @@
+import sys
+n = int(sys.stdin.readline().rstrip())
+data = [0] * 8001    # 절댓값 4000 짜리 배열    
+arr = []
+for i in range(n):
+    a = int(sys.stdin.readline().rstrip())
+    arr.append(a)
+    a += 4000 # -값들을 위해 4000더하기
+    data[a] += 1
+a = []
+b = data.index(max(data))
+if data.count(max(data)) >= 2:   # 최빈값이 두개 이상이라면 최빈값들 따로 리스트에 넣기
+    a.append(b)
+    for i in range(data.count(max(data))-1):
+        b = data.index(max(data), b + 1)
+        a.append(b)
+else:
+    a.append(b)
+
+for i in range(len(a)):
+    if a[i] <= 4000:    # 최빈값들 정리
+        a[i] -= 4000 
+    else:
+        a[i] -= 4000
+a.sort()   # 최빈값들 정렬
+arr.sort()
+print(int(round(sum(arr)/n, 0)))
+print(arr[n//2])
+print(a[0]) if len(a) <= 1 else print(a[1])
+print(arr[-1]-arr[0])
