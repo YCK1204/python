@@ -1,0 +1,11 @@
+# 블랙잭
+from itertools import combinations
+n, m = map(int, input().split())
+
+data = list(combinations(map(int, input().split()), 3))    # permutations 모든 순열, combinations 모든 조합
+                                                           # product 모든 순열(중복 허용), combinations_with_replacement 모든 조합(중복 허용)
+result = []
+for i in data:
+    if sum(i) <= m:        # 원하는 값보다 큰 수들 제거
+        result.append(sum(i))
+print(max(result))
