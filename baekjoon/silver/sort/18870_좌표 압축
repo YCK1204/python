@@ -1,0 +1,7 @@
+import sys
+n = int(sys.stdin.readline().rstrip())
+arr = list(map(int, sys.stdin.readline().rstrip().split()))
+data = sorted(set(arr)) # 중복값 제거
+dic = {data[i] : i for i in range(len(data))}   # index를 활용할 수 없는 이유는 index를 사용시 연산 횟수는 O(n)이 됨 dict는 n(1)
+for i in arr:
+    print(dic[i], end = " ")
