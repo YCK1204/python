@@ -1,0 +1,26 @@
+# 스택 수열
+import sys
+t = int(sys.stdin.readline().rstrip())
+cnt = 0
+stack = []
+result = []
+err = 0
+for i in range(t):
+  n = int(sys.stdin.readline().rstrip())
+  
+  while cnt < n:     # 입력 받은 값이 cnt보다 크다면(스택은 오름차순으로 입력되고 스택 맨 윗값이 원하는 수열의 수랑 같거나 클 때 종료)
+    cnt += 1
+    stack.append(cnt)
+    result.append("+")
+    
+  if stack[-1] == n:      # 스택 맨 윗값이 원하는 수열의 수와 같다면 스택에서 값을 하나 빼고 -
+    result.append("-")
+    stack.pop()
+  else:
+    err = 1               # 원하는 값이 아니라면 에러처리
+    break
+    
+if err:         # 에러가 났으면 수열을 만들 
+  print("NO")
+else:
+  print("\n".join(result))
