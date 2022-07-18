@@ -1,0 +1,15 @@
+# bisect는 파이썬에 내장되어있는 이진탐색 모듈이다
+#bisect_left(list, value)는 list에서 value가 들어갈 가장 왼쪽 인덱스
+#bisect_right(list, value)는 list에서 value가 들어갈 가장 오른쪽 인덱스를 알려준다.
+
+# 자세한건 10816 숫자 카드 2 참고
+from bisect import *
+import sys
+input = sys.stdin.readline
+input()
+cards = list(map(int, input().split()))
+cards.sort()
+input()
+targets = list(map(int, input().split()))
+for i in targets:
+    print(bisect_right(cards, i) - bisect_left(cards, i), end = " ")
