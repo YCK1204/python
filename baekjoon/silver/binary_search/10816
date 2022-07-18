@@ -34,3 +34,4 @@ input()
 targets = list(map(int, input().split()))
 for i in targets:
     print(bisect_right(cards, i) - bisect_left(cards, i), end = " ")
+
