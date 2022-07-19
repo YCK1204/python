@@ -30,3 +30,4 @@ while True:
     end += idx
     idx += 6
 print(i)
+
