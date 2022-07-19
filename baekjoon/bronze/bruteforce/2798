@@ -9,3 +9,11 @@ for i in data:
     if sum(i) <= m:        # 원하는 값보다 큰 수들 제거
         result.append(sum(i))
 print(max(result))
+
+
+# 풀이 2
+
+from itertools import combinations
+n, m = map(int, input().split())
+result = [sum(i) for i in list(combinations(list(map(int, input().split())), 3)) if sum(i) <= m]
+print(max(result))
