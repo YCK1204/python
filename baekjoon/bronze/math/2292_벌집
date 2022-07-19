@@ -14,3 +14,19 @@ while (n > i*6): # 입력된 수가 몇번 째 인지 i*6값을 빼면서 확인
     
 # 맨 처음 1을 뺏으니 출력때 +1
 print(i+1)
+
+
+# 풀이 2
+n = int(input())
+if n == 1:
+    print(1)
+    quit()
+start, end, i, idx = 2, 7, 2, 12
+while True:
+    if n <= end and n >= start:
+        break
+    i+=1
+    start = end+1
+    end += idx
+    idx += 6
+print(i)
