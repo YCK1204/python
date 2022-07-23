@@ -1,0 +1,15 @@
+# 예산
+
+from inspect import EndOfBlock
+import sys
+n = int(sys.stdin.readline().rstrip())
+arr = list(map(int, sys.stdin.readline().rstrip().split()))
+m = int(sys.stdin.readline().rstrip())
+start, end = 0, max(arr)
+while start <= end:
+    total = 0
+    mid = (start+end)//2
+    for i in arr:total += min(mid, i)
+    if total > m:end = mid - 1
+    else:start = mid + 1
+print(end)
